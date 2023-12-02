@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './assets/bears.gif';
 import './App.css';
 
 function App() {
@@ -6,20 +6,35 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>somethin</code> and save to reload.
+        <p className="App-paragraph">
+          Can't decide what to eat?
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <Button role="button">Let's decide together!</Button>
       </header>
     </div>
   );
+}
+
+const Button = ({ as, children, filled, secondary, ...rest }) => {
+  const that = {
+    as
+  }
+  return (
+    <that.as className={`dir-control ${secondary ? 'dir-control--secondary' : ''} ${filled ? 'dir-control--filled' : ''}`} {...rest} >
+      {children}
+      <span/>
+      <span/>
+      <span/>
+      <span/>
+      <b aria-hidden="true">{children}</b>
+      <b aria-hidden="true">{children}</b>
+      <b aria-hidden="true">{children}</b>
+      <b aria-hidden="true">{children}</b>
+    </that.as>
+  )
+}
+Button.defaultProps = {
+  as: 'button'
 }
 
 export default App;
