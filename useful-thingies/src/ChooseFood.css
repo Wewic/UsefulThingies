@@ -8,3 +8,23 @@
     font-size: calc(10px + 2vmin);
     color: white;
   }
+
+  .ChooseFood {
+    text-align: center;
+  }
+  
+  .Food-logo {
+    height: 50vmin;
+    pointer-events: none;
+    border-radius: 25px;
+  }
+
+  .container {
+    display: flex
+  }
+
+  .or {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 2%
+  }
