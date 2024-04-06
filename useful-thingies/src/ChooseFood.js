@@ -11,18 +11,10 @@ const NO_MORE_CHOICES = "No more choices!";
 function ChooseFood() {
     const [food1, setFood1] = useState('Sushi');
     const [food2, setFood2] = useState('Ramen');
-
-    function startFood() {    
-        const foods_index = Math.floor(Math.random() * allFood.length);
-        const food_to_display = allFood.splice(foods_index, 1);
-        console.log("Food start: " + food_to_display);
-        console.log("Remaining foods start: " + allFood);
-        return food_to_display;
-    }
     
     function getNewFood1() {
       if (allFood.length < 1) {
-        if (food2 == NO_MORE_CHOICES) {
+        if (food2 === NO_MORE_CHOICES) {
           return;
         }
         setFood1(NO_MORE_CHOICES);
@@ -37,7 +29,7 @@ function ChooseFood() {
 
     function getNewFood2() {
       if (allFood.length < 1) {
-        if (food1 == NO_MORE_CHOICES) {
+        if (food1 === NO_MORE_CHOICES) {
           return;
         }
         setFood2(NO_MORE_CHOICES);
@@ -58,9 +50,9 @@ function ChooseFood() {
       Which one do you want more?
     </p>
     <div className='container'>
-        <Button role="button" onClick={() => getNewFood1()}>{food1}</Button>
+        <Button role="button" onClick={() => getNewFood2()}>{food1}</Button>
         <span className='or'>OR</span>
-        <Button role="button" onClick={() => getNewFood2()}>{food2}</Button>
+        <Button role="button" onClick={() => getNewFood1()}>{food2}</Button>
     </div>
   </header>
   )
